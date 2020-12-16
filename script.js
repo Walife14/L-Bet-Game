@@ -3,6 +3,8 @@ const currentMoney = document.getElementById("currentMoney");
 const guessLow = document.getElementById("guessLow");
 const guessHigh = document.getElementById("guessHigh");
 const result = document.getElementById("result");
+const isWinner = document.getElementById("isWinner");
+
 
 /* Variable declarations */
 let money = 200;
@@ -20,9 +22,9 @@ function playGameLow() {
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
     if(x<=54){
-        console.log("YOU WIN!");
+        isWinner.innerHTML = "YOU WIN! :)";
     } else {
-        console.log("YOU LOSE :(");
+        isWinner.innerHTML = "YOU LOSE! :(";
     }
 }
 
@@ -30,9 +32,9 @@ function playGameHigh() {
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
     if(x>=55){
-        console.log("YOU WIN!");
+        isWinner.innerHTML = "YOU WIN! :)";
     } else {
-        console.log("YOU LOSE :(");
+        isWinner.innerHTML = "YOU LOSE! :(";
     }
 }
 

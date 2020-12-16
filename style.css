@@ -50,6 +50,17 @@ h3 {
     font-size: 2em;
 }
 
+#isWinner {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    padding: 1em;
+    font-size: 2em;
+    background: #2c3529;
+    border: 2px solid black;
+}
+
 footer {
     position: absolute;
     bottom: 0;
