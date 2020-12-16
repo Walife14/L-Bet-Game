@@ -4,12 +4,15 @@ const guessLow = document.getElementById("guessLow");
 const guessHigh = document.getElementById("guessHigh");
 const result = document.getElementById("result");
 const isWinner = document.getElementById("isWinner");
-const betValue = document.getElementById("betValue");
+const bet10 = document.getElementById("bet10");
+const bet25 = document.getElementById("bet25");
 
 
 /* Variable declarations */
 let money = 200;
 let randomNumber;
+let betValue = 0;
+console.log(betValue);
 
 /* functions */
 
@@ -18,6 +21,18 @@ let randomNumber;
 // function numberGenerator() {
 //     let x = Math.floor(Math.random() * 100) + 1;
 // }
+
+bet10.onclick = function(){
+    betValue = 10;
+    console.log(betValue);
+    return betValue;
+}
+
+bet25.onclick = function(){
+    betValue = 25;
+    console.log(betValue);
+    return betValue;
+}
 
 function playGameLow() {
     let x = Math.floor(Math.random() * 100) + 1;

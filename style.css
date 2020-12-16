@@ -24,13 +24,19 @@ h2 {
     font-size: 5em;
 }
 
-h3 {
+h3, h4 {
     text-align: center;
     font-size: 3em;
 }
 
-h3 input {
+h4 span {
     font-size: 0.8em;
+    border: solid black 2px;
+    margin: 0.3em;
+}
+
+h4 span:hover {
+    cursor: pointer;
 }
 
 #result {
