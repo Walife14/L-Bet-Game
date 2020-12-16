@@ -59,7 +59,7 @@ h4 span:hover {
     font-size: 2em;
 }
 
-#isWinner {
+.centerSpan {
     display: flex;
     justify-content: center;
     margin: auto;
@@ -67,6 +67,14 @@ h4 span:hover {
     padding: 1em;
     font-size: 2em;
     border: 2px solid black;
+}
+
+#resetGame {
+    background: #4ADBC8;
+}
+
+#resetGame:hover {
+    cursor: pointer;
 }
 
 .winner {
