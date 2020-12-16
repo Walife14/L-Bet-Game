@@ -6,6 +6,7 @@ const result = document.getElementById("result");
 const isWinner = document.getElementById("isWinner");
 const bet10 = document.getElementById("bet10");
 const bet25 = document.getElementById("bet25");
+const betDisplay = document.getElementById("betDisplay");
 
 
 /* Variable declarations */
@@ -18,13 +19,13 @@ console.log(betValue);
 
 bet10.onclick = function(){
     betValue = 10;
-    console.log(betValue);
+    betDisplay.innerHTML = betValue;
     return betValue;
 }
 
 bet25.onclick = function(){
     betValue = 25;
-    console.log(betValue);
+    betDisplay.innerHTML = betValue;
     return betValue;
 }
 

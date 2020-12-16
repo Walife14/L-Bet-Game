@@ -83,3 +83,7 @@ footer {
     right: 0;
     padding: 0.5em;
 }
+
+.betSelected {
+    background: gray;
+}
