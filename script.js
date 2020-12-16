@@ -20,12 +20,20 @@ console.log(betValue);
 bet10.onclick = function(){
     betValue = 10;
     betDisplay.innerHTML = betValue;
+    if(betValue = 10){
+        bet25.classList.remove("betSelected");
+        bet10.classList.add("betSelected");
+    }
     return betValue;
 }
 
 bet25.onclick = function(){
     betValue = 25;
     betDisplay.innerHTML = betValue;
+    if(betValue = 25){
+        bet10.classList.remove("betSelected");
+        bet25.classList.add("betSelected");
+    }
     return betValue;
 }
 
