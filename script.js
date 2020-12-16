@@ -23,8 +23,16 @@ function playGameLow() {
     result.innerHTML = x;
     if(x<=54){
         isWinner.innerHTML = "YOU WIN! :)";
+        result.classList.remove("loser");
+        result.classList.add("winner");
+        isWinner.classList.remove("loser");
+        isWinner.classList.add("winner");
     } else {
         isWinner.innerHTML = "YOU LOSE! :(";
+        result.classList.remove("winner");
+        result.classList.add("loser");
+        isWinner.classList.remove("winner");
+        isWinner.classList.add("loser");
     }
 }
 
@@ -33,8 +41,16 @@ function playGameHigh() {
     result.innerHTML = x;
     if(x>=55){
         isWinner.innerHTML = "YOU WIN! :)";
+        result.classList.remove("loser");
+        result.classList.add("winner");
+        isWinner.classList.remove("loser");
+        isWinner.classList.add("winner");
     } else {
         isWinner.innerHTML = "YOU LOSE! :(";
+        result.classList.remove("winner");
+        result.classList.add("loser");
+        isWinner.classList.remove("winner");
+        isWinner.classList.add("loser");
     }
 }
 
