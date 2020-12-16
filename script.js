@@ -26,6 +26,15 @@ function playGameLow() {
     }
 }
 
+function playGameHigh() {
+    let x = Math.floor(Math.random() * 100) + 1;
+    result.innerHTML = x;
+    if(x>=55){
+        console.log("YOU WIN!");
+    } else {
+        console.log("YOU LOSE :(");
+    }
+}
 
 /* Main */
 currentMoney.innerHTML = money;
