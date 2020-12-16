@@ -60,6 +60,9 @@ resetGame.onclick = function () {
 // }
 
 function playGameLow() {
+    if(betValue == 0){
+        return;
+    }
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
     if (x <= 54) {
@@ -82,6 +85,9 @@ function playGameLow() {
 }
 
 function playGameHigh() {
+    if(betValue == 0){
+        return;
+    }
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
     if (x >= 55) {
