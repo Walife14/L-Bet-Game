@@ -29,6 +29,10 @@ h3 {
     font-size: 3em;
 }
 
+h3 input {
+    font-size: 0.8em;
+}
+
 #result {
     display: block;
     text-align: center;

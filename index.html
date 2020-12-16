@@ -15,13 +15,14 @@
     <header>THE L BETTING GAME</header>
     <h1>Money:</h1>
     <h2>$<span id="currentMoney"></span></h2>
-    <h3>Bet Amount: <span>[input - amount to bet here]</span></h3>
+    <h3>Bet Amount:</h3>
+    <h3><input type="number" id="betValue" value=""/></h3>
     <span id="result">00</span>
     <div id="guessContainer">
         <button id="guessLow" onclick="playGameLow()">Guess 1-54</button>
         <button id="guessHigh" onclick="playGameHigh()">Guess 55-100</button>
     </div>
-    <span id="isWinner"></span>
+    <span id="isWinner">Will You Win?</span>
     <footer>
         By Lucas Fernandes Roncolato
     </footer>

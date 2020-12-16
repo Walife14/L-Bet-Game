@@ -4,6 +4,7 @@ const guessLow = document.getElementById("guessLow");
 const guessHigh = document.getElementById("guessHigh");
 const result = document.getElementById("result");
 const isWinner = document.getElementById("isWinner");
+const betValue = document.getElementById("betValue");
 
 
 /* Variable declarations */
@@ -27,6 +28,7 @@ function playGameLow() {
         result.classList.add("winner");
         isWinner.classList.remove("loser");
         isWinner.classList.add("winner");
+        console.log(betValue);
     } else {
         isWinner.innerHTML = "YOU LOSE! :(";
         result.classList.remove("winner");
