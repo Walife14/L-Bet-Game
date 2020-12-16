@@ -14,13 +14,7 @@ let randomNumber;
 let betValue = 0;
 console.log(betValue);
 
-/* functions */
-
-/* Creating a random number between 1-100 */
-
-// function numberGenerator() {
-//     let x = Math.floor(Math.random() * 100) + 1;
-// }
+/* onclick functions */
 
 bet10.onclick = function(){
     betValue = 10;
@@ -34,6 +28,14 @@ bet25.onclick = function(){
     return betValue;
 }
 
+/* functions */
+
+/* Creating a random number between 1-100 */
+
+// function numberGenerator() {
+//     let x = Math.floor(Math.random() * 100) + 1;
+// }
+
 function playGameLow() {
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
@@ -43,13 +45,16 @@ function playGameLow() {
         result.classList.add("winner");
         isWinner.classList.remove("loser");
         isWinner.classList.add("winner");
-        console.log(betValue);
+        money+=betValue;
+        currentMoney.innerHTML = money;
     } else {
         isWinner.innerHTML = "YOU LOSE! :(";
         result.classList.remove("winner");
         result.classList.add("loser");
         isWinner.classList.remove("winner");
         isWinner.classList.add("loser");
+        money-=betValue;
+        currentMoney.innerHTML = money;
     }
 }
 
@@ -62,12 +67,16 @@ function playGameHigh() {
         result.classList.add("winner");
         isWinner.classList.remove("loser");
         isWinner.classList.add("winner");
+        money+=betValue;
+        currentMoney.innerHTML = money;
     } else {
         isWinner.innerHTML = "YOU LOSE! :(";
         result.classList.remove("winner");
         result.classList.add("loser");
         isWinner.classList.remove("winner");
         isWinner.classList.add("loser");
+        money-=betValue;
+        currentMoney.innerHTML = money;
     }
 }
 
