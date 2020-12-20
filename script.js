@@ -13,6 +13,7 @@ const resetGame = document.getElementById("resetGame");
 let money = 200;
 let randomNumber;
 let betValue = 0;
+currentMoney.innerHTML = money;
 
 /* onclick functions */
 
@@ -40,8 +41,6 @@ resetGame.onclick = resetTheGame;
 
 /* functions */
 
-/* Creating a random number between 1-100 */
-
 // function numberGenerator() {
 //     let x = Math.floor(Math.random() * 100) + 1;
 // }
@@ -55,22 +54,9 @@ function playGameLow() {
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
     if (x <= 54) {
-        isWinner.innerHTML = "YOU WIN! :)";
-        result.classList.remove("loser");
-        result.classList.add("winner");
-        isWinner.classList.remove("loser");
-        isWinner.classList.add("winner");
-        money += betValue;
-        currentMoney.innerHTML = money;
+        youWin();
     } else {
-        isWinner.innerHTML = "YOU LOSE! :(";
-        result.classList.remove("winner");
-        result.classList.add("loser");
-        isWinner.classList.remove("winner");
-        isWinner.classList.add("loser");
-        money -= betValue;
-        currentMoney.innerHTML = money;
-        lostGame();
+        youLose();
     }
 }
 
@@ -83,22 +69,9 @@ function playGameHigh() {
     let x = Math.floor(Math.random() * 100) + 1;
     result.innerHTML = x;
     if (x >= 55) {
-        isWinner.innerHTML = "YOU WIN! :)";
-        result.classList.remove("loser");
-        result.classList.add("winner");
-        isWinner.classList.remove("loser");
-        isWinner.classList.add("winner");
-        money += betValue;
-        currentMoney.innerHTML = money;
+        youWin();
     } else {
-        isWinner.innerHTML = "YOU LOSE! :(";
-        result.classList.remove("winner");
-        result.classList.add("loser");
-        isWinner.classList.remove("winner");
-        isWinner.classList.add("loser");
-        money -= betValue;
-        currentMoney.innerHTML = money;
-        lostGame();
+        youLose();
     }
 }
 
@@ -117,15 +90,31 @@ function resetTheGame() {
 }
 
 function lostGame() {
-    if(money<=0){
+    if (money <= 0) {
         alert("You've Lost! The game will now reset!");
         resetTheGame();
     }
 }
 
-/* Main */
-currentMoney.innerHTML = money;
-/* I will need to create a function that runs
-when the player guesses something, this function will create the random
-number and that random number will be the result
-if the guess is right they win if not they lose */
+function youWin() {
+    isWinner.innerHTML = "YOU WIN! :)";
+    result.classList.remove("loser");
+    result.classList.add("winner");
+    isWinner.classList.remove("loser");
+    isWinner.classList.add("winner");
+    money += betValue;
+    currentMoney.innerHTML = money;
+    console.log("it ran!");
+}
+
+function youLose() {
+    isWinner.innerHTML = "YOU LOSE! :(";
+    result.classList.remove("winner");
+    result.classList.add("loser");
+    isWinner.classList.remove("winner");
+    isWinner.classList.add("loser");
+    money -= betValue;
+    currentMoney.innerHTML = money;
+    lostGame();
+    console.log("it ran you lose");
+}
