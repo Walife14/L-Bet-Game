@@ -8,6 +8,7 @@ const bet10 = document.getElementById("bet10");
 const bet25 = document.getElementById("bet25");
 const betDisplay = document.getElementById("betDisplay");
 const resetGame = document.getElementById("resetGame");
+const buyMachine = document.getElementById("buyMachine");
 
 /* Variable declarations */
 let money = 200;
@@ -25,6 +26,11 @@ bet10.onclick = function () {
         bet10.classList.add("betSelected");
     }
     return betValue;
+}
+
+buyMachine.onclick = function() {
+    money-=20;
+    let timerId = setInterval(() => money+=10, 2000);
 }
 
 bet25.onclick = function () {
@@ -104,7 +110,6 @@ function youWin() {
     isWinner.classList.add("winner");
     money += betValue;
     currentMoney.innerHTML = money;
-    console.log("it ran!");
 }
 
 function youLose() {
@@ -116,5 +121,4 @@ function youLose() {
     money -= betValue;
     currentMoney.innerHTML = money;
     lostGame();
-    console.log("it ran you lose");
 }
