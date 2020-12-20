@@ -18,6 +18,17 @@ currentMoney.innerHTML = money;
 
 /* onclick functions */
 
+buyMachine.onclick = function() {
+    if(money<20){
+        alert("You don't have enough money!");
+        return;
+    }
+    money-=20;
+    currentMoney.innerHTML = money;
+    let timerId = setInterval(() => machineOne(), 5000);
+    addSlotMachine();
+}
+
 bet10.onclick = function () {
     betValue = 10;
     betDisplay.innerHTML = betValue;
@@ -26,11 +37,6 @@ bet10.onclick = function () {
         bet10.classList.add("betSelected");
     }
     return betValue;
-}
-
-buyMachine.onclick = function() {
-    money-=20;
-    let timerId = setInterval(() => money+=10, 2000);
 }
 
 bet25.onclick = function () {
@@ -46,10 +52,6 @@ bet25.onclick = function () {
 resetGame.onclick = resetTheGame;
 
 /* functions */
-
-// function numberGenerator() {
-//     let x = Math.floor(Math.random() * 100) + 1;
-// }
 
 function playGameLow() {
     if (betValue == 0) {
@@ -121,4 +123,19 @@ function youLose() {
     money -= betValue;
     currentMoney.innerHTML = money;
     lostGame();
+}
+
+/* Slot Machine codes */
+
+function machineOne() {
+    money+=1;
+    currentMoney.innerHTML = money;
+}
+
+function addSlotMachine() {
+    let slotMachine = document.createElement("p");
+    let node = document.createTextNode("▣");
+    slotMachine.appendChild(node);
+    let element = document.getElementById("slotMachines");
+    element.appendChild(slotMachine);
 }
