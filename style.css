@@ -14,6 +14,12 @@ header {
     margin-top: 1em;
 }
 
+@media (max-width: 480px){
+    header {
+        font-size: 2em;
+    }
+}
+
 h1 {
     text-align: center;
     font-size: 2.5em;
@@ -90,6 +96,7 @@ footer {
     bottom: 0;
     right: 0;
     padding: 0.5em;
+    opacity: 0.5;
 }
 
 .betSelected {

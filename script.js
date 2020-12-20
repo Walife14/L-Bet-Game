@@ -13,7 +13,6 @@ const resetGame = document.getElementById("resetGame");
 let money = 200;
 let randomNumber;
 let betValue = 0;
-console.log(betValue);
 
 /* onclick functions */
 
@@ -37,19 +36,7 @@ bet25.onclick = function () {
     return betValue;
 }
 
-resetGame.onclick = function () {
-    money = 200;
-    betDisplay.innerHTML = 00;
-    currentMoney.innerHTML = money;
-    bet10.classList.remove("betSelected");
-    bet25.classList.remove("betSelected");
-    isWinner.classList.remove("loser");
-    isWinner.classList.remove("winner");
-    result.classList.remove("loser");
-    result.classList.remove("winner");
-    isWinner.innerHTML = "Will You Win?";
-    result.innerHTML = "--";
-}
+resetGame.onclick = resetTheGame;
 
 /* functions */
 
@@ -60,7 +47,7 @@ resetGame.onclick = function () {
 // }
 
 function playGameLow() {
-    if(betValue == 0){
+    if (betValue == 0) {
         isWinner.innerHTML = "Please Select a bet amount!";
         isWinner.classList.add("loser");
         return;
@@ -83,11 +70,12 @@ function playGameLow() {
         isWinner.classList.add("loser");
         money -= betValue;
         currentMoney.innerHTML = money;
+        lostGame();
     }
 }
 
 function playGameHigh() {
-    if(betValue == 0){
+    if (betValue == 0) {
         isWinner.innerHTML = "Please Select a bet amount!";
         isWinner.classList.add("loser");
         return;
@@ -110,6 +98,28 @@ function playGameHigh() {
         isWinner.classList.add("loser");
         money -= betValue;
         currentMoney.innerHTML = money;
+        lostGame();
+    }
+}
+
+function resetTheGame() {
+    money = 200;
+    betDisplay.innerHTML = 00;
+    currentMoney.innerHTML = money;
+    bet10.classList.remove("betSelected");
+    bet25.classList.remove("betSelected");
+    isWinner.classList.remove("loser");
+    isWinner.classList.remove("winner");
+    result.classList.remove("loser");
+    result.classList.remove("winner");
+    isWinner.innerHTML = "Will You Win?";
+    result.innerHTML = "--";
+}
+
+function lostGame() {
+    if(money<=0){
+        alert("You've Lost! The game will now reset!");
+        resetTheGame();
     }
 }
 
